@@ -5,11 +5,11 @@
 }
 
 .archiveTitle {
-  margin: 0;
-  font-size: 12px;
-  font-family: Helvetica, arial;
-  font-weight: bold;
-  color: #666;
+  margin: 0 !important;
+  font-size: 12px !important;
+  font-family: Helvetica, arial !important;
+  font-weight: bold !important;
+  color: #666 !important;
 }
 
 .archiveButton {
@@ -38,14 +38,14 @@
   transform: translateY(3px);
 }
 
-.archiveSelectLabel,
-.archiveSelectLabel *,
-.archiveSelectLabel:before,
-.archiveSelectLabel:after {
+label.archiveSelectLabel,
+label.archiveSelectLabel *,
+label.archiveSelectLabel:before,
+label.archiveSelectLabel:after {
   box-sizing: border-box;
 }
 
-.archiveSelectLabel {
+label.archiveSelectLabel {
   position: relative;
   display: inline-block;
   width: 190px;
@@ -53,7 +53,7 @@
   margin: 0 auto;
 }
 
-.archiveSelectLabel:before {
+label.archiveSelectLabel:before {
   position: absolute;
   display: block;
   top: 0;
@@ -66,7 +66,7 @@
   border-left: 1px solid #ddd;
 }
 
-.archiveSelectLabel:after {
+label.archiveSelectLabel:after {
   position: absolute;
   top: 7px;
   right: 12px;
@@ -78,21 +78,21 @@
   content: "<>";
 }
 
-.archiveSelect {
-  display: inline-block;
-  width: 100%;
-  height: 30px;
-  margin: 0;
-  padding: 3px 10px;
-  padding-right: 28px;
-  border: none;
-  border-radius: 4px;
-  outline: none;
-  box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
-  background: #f8f8f8;
-  color: #888;
-  -webkit-appearance: none;
-  font-size: 13px;
-  font-weight: normal;
-  cursor: pointer;
+select.archiveSelect {
+  display: inline-block !important;
+  width: 100% !important;
+  height: 30px !important;
+  margin: 0 !important;
+  padding: 3px 10px !important;
+  padding-right: 28px !important;
+  border: none !important;
+  border-radius: 4px !important;
+  outline: none !important;
+  box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset !important;
+  background: #f8f8f8 !important;
+  color: #888 !important;
+  -webkit-appearance: none !important;
+  font-size: 13px !important;
+  font-weight: normal !important;
+  cursor: pointer !important;
 }

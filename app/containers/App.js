@@ -24,7 +24,7 @@ export default class App extends Component {
 
   handleClose = () => {
     document.body.classList.remove('_wtm-inserted');
-    document.querySelector('.inject-react-example').remove();
+    document.querySelector('.inject-web-timemachine').remove();
     window.webTimeMachineInjected = false;
   };
 
@@ -34,7 +34,7 @@ export default class App extends Component {
   };
 
   render() {
-    const { archive, actions } = this.props;
+    const { actions } = this.props;
 
     return (
       <div className={style.app}>
