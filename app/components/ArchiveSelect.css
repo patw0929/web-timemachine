@@ -73,6 +73,7 @@
   border-radius: 4px;
   box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
   font-size: 13px;
+  text-align: center;
   background: #f8f8f8;
   color: #888;
 }
