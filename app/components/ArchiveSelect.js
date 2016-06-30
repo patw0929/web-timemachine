@@ -1,10 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { fetchArchiveData } from '../actions';
 import style from './ArchiveSelect.css';
 
 class ArchiveList extends Component {
   static propTypes = {
-    archive: PropTypes.array,
+    archives: PropTypes.array,
+    page: PropTypes.number,
+    totalPages: PropTypes.number,
+    fetchArchiveData: PropTypes.func,
+    isFetching: PropTypes.bool,
   };
 
   constructor(props) {
@@ -32,16 +37,56 @@ class ArchiveList extends Component {
     }
   };
 
-  render() {
-    const { archive } = this.props;
+  url = window.location.href;
 
-    if (!archive || !archive.length) {
+  handleChangePage(page) {
+    this.props.fetchArchiveData(this.url, page);
+  }
+
+  renderPager(direction, page, totalPages) {
+    if (direction === 'next') {
+      if (totalPages > 1 && page < totalPages - 1) {
+        return (
+          <a
+            className={style.pagerNext}
+            onClick={() => { this.handleChangePage(page + 1); }}
+          >&gt;</a>
+        );
+      }
+
+      return null;
+    }
+
+    if (page > 0 && totalPages > 1) {
+      return (
+        <a
+          className={style.pagerPrev}
+          onClick={() => { this.handleChangePage(page - 1); }}
+        >&lt;</a>
+      );
+    }
+
+    return null;
+  }
+
+  render() {
+    const { archives, page, totalPages } = this.props;
+
+    if (!archives || !archives.length) {
       return null;
     }
 
     return (
       <div className={style.archiveSelectWrapper}>
-        <h5 className={style.archiveTitle}>Archive.org:</h5>
+        <header className={style.archiveHeader}>
+          <h5 className={style.archiveTitle}>Archive.org:</h5>
+
+          <div className={style.pager}>
+            {this.renderPager('prev', page, totalPages)}
+            {this.renderPager('next', page, totalPages)}
+          </div>
+        </header>
+
         <label className={style.archiveSelectLabel}>
           <select
             className={style.archiveSelect}
@@ -49,7 +94,7 @@ class ArchiveList extends Component {
             value={this.state.archive}
           >
             <option value="">Take me back to...</option>
-            {archive && archive.map(item =>
+            {archives && archives.map(item =>
               <option
                 key={item[0]}
                 value={item[0]}
@@ -69,8 +114,11 @@ class ArchiveList extends Component {
 
 function mapStateToProps(state) {
   return {
-    archive: state.archive,
+    archives: state.archive.data,
+    page: state.archive.page,
+    totalPages: state.archive.totalPages,
+    isFetching: state.archive.isFetching,
   };
 }
 
-export default connect(mapStateToProps)(ArchiveList);
+export default connect(mapStateToProps, { fetchArchiveData })(ArchiveList);

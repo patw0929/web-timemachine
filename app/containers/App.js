@@ -16,7 +16,7 @@ import ArchiveSelect from '../components/ArchiveSelect';
 export default class App extends Component {
 
   static propTypes = {
-    archive: PropTypes.array.isRequired,
+    archive: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
   };
 
@@ -33,11 +33,25 @@ export default class App extends Component {
     window.open(googleCacheUrl + this.url);
   };
 
+  renderLoading() {
+    if (this.props.archive.isFetching) {
+      return (
+        <div className={style.appLoader}>
+          <span>Fetching...</span>
+        </div>
+      );
+    }
+
+    return null;
+  }
+
   render() {
     const { actions } = this.props;
 
     return (
       <div className={style.app}>
+        {this.renderLoading()}
+
         <h1 className={style.logo}>Web TimeMachine</h1>
 
         <div
