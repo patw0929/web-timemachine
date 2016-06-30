@@ -4,12 +4,62 @@
   text-align: left;
 }
 
+.archiveHeader {
+  margin-bottom: 4px;
+}
+
+.archiveHeader:before,
+.archiveHeader:after {
+  content: " ";
+  display: table;
+}
+
+.archiveHeader:after {
+  clear: both;
+}
+
 .archiveTitle {
+  float: left;
   margin: 0 !important;
   font-size: 12px !important;
   font-family: Helvetica, arial !important;
   font-weight: bold !important;
   color: #666 !important;
+}
+
+.pager {
+  float: right;
+}
+
+.pagerNext {
+  margin-left: 10px;
+}
+
+.pagerPrev,
+.pagerNext {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  background-color: #f8f8f8;
+  color: #888;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+  text-decoration: none !important;
+}
+
+.pagerPrev:hover,
+.pagerNext:hover {
+  background-color: #f8f8f8;
+  text-decoration: none !important;
+}
+
+.pagerPrev:active,
+.pagerNext:active {
+  transform: translateY(2px);
+  box-shadow: none;
 }
 
 .archiveButton {
@@ -94,5 +144,4 @@ select.archiveSelect {
   -webkit-appearance: none !important;
   font-size: 13px !important;
   font-weight: normal !important;
-  cursor: pointer !important;
 }
