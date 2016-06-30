@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import todos from './todos';
+import archiveReducer from './archive';
 
 export default combineReducers({
-  todos
+  archive: archiveReducer,
 });

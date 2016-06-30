@@ -1,0 +1,98 @@
+.archiveSelectWrapper {
+  width: 250px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.archiveTitle {
+  margin: 0;
+  font-size: 12px;
+  font-family: Helvetica, arial;
+  font-weight: bold;
+  color: #666;
+}
+
+.archiveButton {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+  font-size: 13px;
+  background: #f8f8f8;
+  color: #888;
+}
+
+.archiveButton:hover,
+.archiveButton:focus {
+  background-color: #fff;
+  color: #888;
+}
+
+.archiveButton:active {
+  box-shadow: none;
+  transform: translateY(3px);
+}
+
+.archiveSelectLabel,
+.archiveSelectLabel *,
+.archiveSelectLabel:before,
+.archiveSelectLabel:after {
+  box-sizing: border-box;
+}
+
+.archiveSelectLabel {
+  position: relative;
+  display: inline-block;
+  width: 190px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.archiveSelectLabel:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 6px;
+  width: 30px;
+  height: 30px;
+  background: #f8f8f8;
+  pointer-events: none;
+  content: "";
+  border-left: 1px solid #ddd;
+}
+
+.archiveSelectLabel:after {
+  position: absolute;
+  top: 7px;
+  right: 12px;
+  padding: 0 0 2px;
+  color: #aaa;
+  font: 11px "Consolas", monospace;
+  transform: rotate(90deg);
+  pointer-events: none;
+  content: "<>";
+}
+
+.archiveSelect {
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  padding: 3px 10px;
+  padding-right: 28px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+  background: #f8f8f8;
+  color: #888;
+  -webkit-appearance: none;
+  font-size: 13px;
+  font-weight: normal;
+  cursor: pointer;
+}

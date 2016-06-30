@@ -1,0 +1,1 @@
+export const FETCH_ARCHIVE_DATA = 'FETCH_ARCHIVE_DATA';
