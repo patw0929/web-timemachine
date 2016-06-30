@@ -51,9 +51,9 @@ class ArchiveList extends Component {
             <option value="">Take me back to...</option>
             {archive && archive.map(item =>
               <option
-                key={item[1]}
-                value={item[1]}
-              >{item[1]}</option>
+                key={item[0]}
+                value={item[0]}
+              >{item[0]}</option>
             )}
           </select>
         </label>
